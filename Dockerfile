@@ -1,19 +1,16 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 ENV DEBIAN_FRONTEND noninteractive
-MAINTAINER LFelipedeOliveira <felipe@neoprospecta.com>
+MAINTAINER BiomeHub
+
+LABEL version="2.20.0.422"
+LABEL software.version="2.20.0.422"
+LABEL software="bcl2fastq2"
 
 RUN apt-get -y update; \
   apt-get -y upgrade; \
-  apt-get -y install python3 build-essential zlibc libc6 gcc g++ libboost1.54-all-dev cmake python3-pip; \
+  apt-get -y install build-essential zlibc libc6 gcc g++ libboost1.54-all-dev cmake; \
   apt-get -y install wget; \
-  apt-get -y install software-properties-common python-software-properties unzip; \
-  echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections; \
-  add-apt-repository -y ppa:webupd8team/java; \
-  apt-get update; \
-  apt-get install -y oracle-java8-installer; \
-  apt-get clean; \
-  rm -rf /var/lib/apt/lists/*; \
-  rm -rf /var/cache/oracle-jdk8-installer; \
+  apt-get -y install unzip; \
   apt-get clean
 
 RUN wget ftp://webdata2:webdata2@ussd-ftp.illumina.com/downloads/software/bcl2fastq/bcl2fastq2-v2-20-0-tar.zip; \

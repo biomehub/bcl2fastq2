@@ -2,8 +2,8 @@ FROM ubuntu:14.04
 ENV DEBIAN_FRONTEND noninteractive
 MAINTAINER BiomeHub
 
-LABEL version="2.20.0.422"
-LABEL software.version="2.20.0.422"
+LABEL version="2.20.0"
+LABEL software.version="2.20.0"
 LABEL software="bcl2fastq2"
 
 RUN apt-get -y update; \

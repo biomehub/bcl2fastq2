@@ -12,6 +12,7 @@ def fix_samplesheet(sample_sheet):
         if change_line is True:
             line_list = line.split(',')
             line_list[0] = line_list[0].replace('.', '-')
+            line_list[1] = line_list[1].replace('.', '-')
             new_ss += ','.join(line_list)
         else:
             if line.startswith('Sample_ID,'):

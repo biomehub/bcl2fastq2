@@ -27,5 +27,9 @@ RUN /bcl2fastq/src/configure --prefix=/usr/local; \
     rm -r /bcl2fastq; \
     rm -r /tmp/bcl2fastq2-v2-20-0-build
 
+ADD ./fix_samplesheet.py /usr/bin
+
+RUN chmod +x /usr/bin/fix_samplesheet.py
+
 WORKDIR /
 

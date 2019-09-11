@@ -29,7 +29,7 @@ RUN /bcl2fastq/src/configure --prefix=/usr/local; \
 
 ADD ./fix_samplesheet.py /usr/local/bin
 
-RUN chmod +x /usr/bin/fix_samplesheet.py
+RUN chmod +x /usr/local/bin/fix_samplesheet.py
 
 WORKDIR /
 

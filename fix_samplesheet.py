@@ -4,8 +4,9 @@ import os
 
 
 def fix_samplesheet(sample_sheet):
-    old_ss = sample_sheet + '_old.csv'
-    os.system('cp {} {}'.format(sample_sheet, old_ss))
+    original_ss = sample_sheet + '_original.csv'
+    if original_ss.os.path.isfile(original_ss) is False:
+        os.system('cp {} {}'.format(sample_sheet, original_ss))
     new_ss = ''
     change_line = False
     for line in open(sample_sheet):
@@ -25,7 +26,5 @@ def fix_samplesheet(sample_sheet):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', '--samplesheet', help='SampleSheet path')
-
     args = parser.parse_args()
-
     fix_samplesheet(sample_sheet=args.samplesheet)

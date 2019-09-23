@@ -5,7 +5,7 @@ import os
 
 def fix_samplesheet(sample_sheet):
     original_ss = sample_sheet + '_original.csv'
-    if original_ss.os.path.isfile(original_ss) is False:
+    if os.path.isfile(original_ss) is False:
         os.system('cp {} {}'.format(sample_sheet, original_ss))
     new_ss = ''
     change_line = False
